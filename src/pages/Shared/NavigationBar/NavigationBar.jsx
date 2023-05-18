@@ -90,7 +90,7 @@ const NavigationBar = () => {
           /* Logout Button */
           <button
             onClick={handleLogOut}
-            className="flex items-center bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            className="flex items-center btn-logout"
           >
             <FaSignOutAlt className="mr-2" />
             Log Out
@@ -99,7 +99,7 @@ const NavigationBar = () => {
           <Link to="/login">
             {" "}
             {/* Login Button  */}
-            <button className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="btn btn-primary normal-case">
               <FaSignInAlt className="mr-2" />
               Log In
             </button>

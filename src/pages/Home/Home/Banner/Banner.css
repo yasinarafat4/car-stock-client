@@ -1,0 +1,15 @@
+.btn-blogs {
+  padding: 10px 15px;
+  color: #e72e2e;
+  border: 2px solid #e72e2e;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.btn-blogs:hover {
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #ca3325;
+  border-radius: 10px;
+  transition: 0.3s;
+}
