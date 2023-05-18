@@ -2,8 +2,38 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import loginImg from "../../assets/images/login/login-img.png";
 import "./Login.css";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
+
+  const { logIn, googleSignIn } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    setError("");
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    logIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => {
+        if (error.code === "auth/user-not-found") {
+          setError("User Not Found. Invalid email or password!");
+        } else if (error.code === "auth/wrong-password") {
+          setError("Wrong Password. Please try again!");
+        } else {
+          setError(error.message);
+        }
+      });
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row gap-10">
@@ -23,7 +53,7 @@ const Login = () => {
         <div className="card flex-shrink-0 w-full lg:w-1/2 shadow-2xl bg-base-100 ">
           <div className="card-body">
             <h1 className="text-center text-3xl font-bold">Login</h1>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -48,9 +78,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <p className="text-red-600 text-sm m-1 font-semibold">
-                Dynamic Error Message Here
-              </p>
+              <p className="text-red-600 text-sm m-1 font-semibold">{error}</p>
               <div className="form-control">
                 <input className="btn-login" type="submit" value="Login" />
               </div>

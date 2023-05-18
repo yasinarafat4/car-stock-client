@@ -2,8 +2,19 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import "./NavigationBar.css";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  // Logout button
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
   const navItems = (
     <>
       <li>
@@ -21,16 +32,20 @@ const NavigationBar = () => {
           Blogs
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/mytoys" activeClassName="active">
-          My Toys
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/addtoys" activeClassName="active">
-          Add A Toy
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/mytoys" activeClassName="active">
+              My Toys
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/addtoys" activeClassName="active">
+              Add A Toy
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -71,32 +86,39 @@ const NavigationBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {/* Logout Button */}
-        <button className="flex items-center bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-          <FaSignOutAlt className="mr-2" />
-          Log Out
-        </button>
-
-        {/* Login Button */}
-        <Link to="/login">
-          {" "}
-          <button className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <FaSignInAlt className="mr-2" />
-            Log In
+        {user ? (
+          /* Logout Button */
+          <button
+            onClick={handleLogOut}
+            className="flex items-center bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            <FaSignOutAlt className="mr-2" />
+            Log Out
           </button>
-        </Link>
-        <img
-          className="rounded-full"
-          title="User"
-          style={{
-            width: "40px",
-            height: "40px",
-            margin: "10px",
-            border: "2px solid white",
-          }}
-          src="https://picsum.photos/200/300"
-          alt=""
-        />
+        ) : (
+          <Link to="/login">
+            {" "}
+            {/* Login Button  */}
+            <button className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <FaSignInAlt className="mr-2" />
+              Log In
+            </button>
+          </Link>
+        )}
+        {user && (
+          <img
+            className="rounded-full"
+            title={user.displayName || "User"}
+            style={{
+              width: "40px",
+              height: "40px",
+              margin: "10px",
+              border: "2px solid gray",
+            }}
+            src={user.photoURL || "https://picsum.photos/200/300"}
+            alt=""
+          />
+        )}
       </div>
     </div>
   );
