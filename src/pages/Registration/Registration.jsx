@@ -1,8 +1,57 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import registerImg from "../../assets/images/register/register-img.png";
 import "./Registration.css";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Registration = () => {
+  const { createNewUser, userProfile } = useContext(AuthContext);
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleRegister = (event) => {
+    setError("");
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+
+    createNewUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setSuccess("User has created successfully");
+        form.reset();
+        updateUserProfile(name, photo);
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          setError("Email already used. Try with a new email!");
+        } else if (error.code === "auth/weak-password") {
+          setError("Password should be at least 6 characters!");
+        } else {
+          setError(error.message);
+        }
+        setSuccess("");
+      });
+  };
+
+  const updateUserProfile = (name, photo) => {
+    const profile = {
+      displayName: name,
+      photoURL: photo,
+    };
+    userProfile(profile)
+      .then(() => {})
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row gap-10">
@@ -22,7 +71,7 @@ const Registration = () => {
         <div className="card flex-shrink-0 w-full lg:w-1/2 shadow-2xl bg-base-100 ">
           <div className="card-body">
             <h1 className="text-center text-3xl font-bold">Register</h1>
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="form-control ">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -71,8 +120,9 @@ const Registration = () => {
                   required
                 />
               </div>
-              <p className="text-red-600 text-sm m-1 font-semibold">
-                Dynamic Error Message Here
+              <p className="text-red-600 text-sm m-1 font-semibold">{error}</p>
+              <p className="text-green-600 text-sm m-1 font-semibold">
+                {success}
               </p>
               <div className="form-control">
                 <input
