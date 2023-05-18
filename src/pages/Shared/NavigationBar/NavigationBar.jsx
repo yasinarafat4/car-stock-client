@@ -12,7 +12,7 @@ const NavigationBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/allToys" activeClassName="active">
+        <NavLink to="/alltoys" activeClassName="active">
           All Toys
         </NavLink>
       </li>
@@ -22,12 +22,12 @@ const NavigationBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/myToys" activeClassName="active">
+        <NavLink to="/mytoys" activeClassName="active">
           My Toys
         </NavLink>
       </li>
       <li>
-        <NavLink to="/addToys" activeClassName="active">
+        <NavLink to="/addtoys" activeClassName="active">
           Add A Toy
         </NavLink>
       </li>
