@@ -34,6 +34,16 @@ const Login = () => {
       });
   };
 
+  const handleGoogleSignIn = () => {
+    setError("");
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => setError(error.message));
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row gap-10">
@@ -88,7 +98,10 @@ const Login = () => {
                 <div className="divider">Or Sign In with</div>
               </div>
               <div className="flex justify-center items-center gap-4 mt-3 mb-3">
-                <button className="btn btn-primary normal-case gap-2">
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="btn btn-primary normal-case gap-2"
+                >
                   <FcGoogle
                     className="rounded-full text-lg"
                     style={{ backgroundColor: "white" }}
