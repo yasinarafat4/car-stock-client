@@ -1,9 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
+import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../../providers/AuthProvider";
 
 const CategoryCard = ({ category }) => {
   const { _id, picture, name, price, rating } = category;
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
+  const handleViewDetails = () => {
+    if (user) {
+      navigate(`/categoryDetails/${_id}`);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You have to log in first to view details!",
+        confirmButtonText: "Ok",
+      }).then(() => {
+        navigate("/login");
+        navigate(`/categoryDetails/${_id}`);
+      });
+    }
+  };
+
   return (
     <div className="m-4 shadow-lg p-4 flex justify- items-center gap-4">
       <img className="w-1/2 rounded-md" src={picture} alt="" />
@@ -24,9 +48,12 @@ const CategoryCard = ({ category }) => {
           />
         </div>
 
-        <Link to={`/categoryDetails/${_id}`}>
-          <button className="btn btn-primary normal-case">View Details</button>
-        </Link>
+        <button
+          className="btn btn-primary normal-case"
+          onClick={handleViewDetails}
+        >
+          View Details
+        </button>
       </div>
     </div>
   );

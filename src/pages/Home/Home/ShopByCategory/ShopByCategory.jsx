@@ -6,7 +6,7 @@ import "./ShopByCategory.css";
 
 const ShopByCategory = () => {
   const [categories, setCategories] = useState([]);
-  const [tab, setTab] = useState("Regular Car");
+  const [tab, setTab] = useState("Sports Car");
 
   useEffect(() => {
     fetch(`http://localhost:5000/categories/${tab}`)

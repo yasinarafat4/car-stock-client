@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import loginImg from "../../assets/images/login/login-img.png";
 import "./Login.css";
@@ -9,6 +9,9 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const { logIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     setError("");
@@ -22,6 +25,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         if (error.code === "auth/user-not-found") {
@@ -40,6 +44,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
