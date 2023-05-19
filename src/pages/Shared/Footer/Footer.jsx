@@ -10,9 +10,10 @@ const Footer = () => {
           <Link to="/">
             <img className="w-40" src={logo} alt="" />
           </Link>
-          <p className="font-semibold">
-            Discover endless hours of playtime joy with our exciting car toy
-            range.
+          <p className="w-full lg:w-2/4">
+            Discover endless joy with our collection of premium car toys.
+            Experience thrilling adventures with our meticulously crafted toy
+            cars. Start the journey today!
           </p>
           <div className="social-icons flex gap-2 md:ms-4">
             <a

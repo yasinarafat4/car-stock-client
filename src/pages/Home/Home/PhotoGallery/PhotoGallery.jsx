@@ -46,7 +46,7 @@ const PhotoGallery = () => {
       <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879]">
         Car Toy Showcase
       </h2>
-      <p className="text-center font-medium m-4">
+      <p className="text-center m-4">
         Indulge in the wonders of our Car Toy Showcase, where a mesmerizing
         collection of miniature automobiles awaits. From classic vintage cars to
         cutting-edge futuristic models, our gallery transports you into a world
@@ -57,7 +57,7 @@ const PhotoGallery = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2 transform transition-transform duration-300 hover:scale-110"
+            className="w-1/2 md:w-1/3 lg:w-1/4 p-2 transform transition-transform duration-300 hover:scale-110"
           >
             <img
               src={image}
@@ -82,7 +82,7 @@ const PhotoGallery = () => {
 
             <button
               onClick={closeImage}
-              className="absolute -top-3 -right-3 btn btn-circle btn-sm  bg-red-600"
+              className="absolute -top-3 -right-3 btn btn-circle btn-sm  bg-black"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

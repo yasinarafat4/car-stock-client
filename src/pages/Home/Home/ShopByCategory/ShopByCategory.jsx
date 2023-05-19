@@ -1,26 +1,40 @@
 import { useEffect, useState } from "react";
 import CategoryCard from "../CategoryCard/CategoryCard";
+import { Tab, Tabs, TabList } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import "./ShopByCategory.css";
 
 const ShopByCategory = () => {
   const [categories, setCategories] = useState([]);
+  const [tab, setTab] = useState("Regular Car");
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch(`http://localhost:5000/categories/${tab}`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
       });
-  }, []);
+  }, [tab]);
 
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879]">
+      <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879] mb-6">
         Shop By Category
       </h2>
       <p className="text-center font-medium m-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi fugiat
-        quod tenetur officiis eius commodi libero. Repellat culpa voluptate
-        placeat.
+        <Tabs>
+          <TabList className="custom-tab-list">
+            <Tab className="custom-tab" onClick={() => setTab("Sports Car")}>
+              Sports Car
+            </Tab>
+            <Tab className="custom-tab" onClick={() => setTab("Regular Car")}>
+              Regular Car
+            </Tab>
+            <Tab className="custom-tab" onClick={() => setTab("Truck")}>
+              Truck
+            </Tab>
+          </TabList>
+        </Tabs>
       </p>
       <div className="grid grid-cols md:grid-cols-2">
         {categories.map((category) => (

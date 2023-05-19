@@ -1,0 +1,33 @@
+.custom-tab-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+.custom-tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-tab:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-tab:focus {
+  outline: none;
+}
+
+.custom-tab.react-tabs__tab--selected {
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #333;
+  color: #333;
+}

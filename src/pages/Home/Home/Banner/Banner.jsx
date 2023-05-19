@@ -9,14 +9,14 @@ const Banner = () => {
         backgroundImage: "url('https://i.ibb.co/8cKkBpS/banner1.png')",
       }}
     >
-      <div className="absolute left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full flex flex-col justify-center ps-8">
+      <div className="absolute left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] h-full flex flex-col justify-center ps-8 w-3/4 md:w-1/3">
         <h1 className="text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-white font-bold mb-4 sm:mb-6 lg:mb-8">
           Welcome to the Car Toy World
         </h1>
-        <p className="text-sm md:text-xl text-white mb-6 sm:mb-8 lg:mb-10">
-          Rev up your imagination with our wide selection of car <br /> toys.
-          From colorful cars to interactive play sets, our <br /> baby-friendly
-          toys offer endless fun and learning opportunities.
+        <p className="text-sm text-white mb-6 sm:mb-8 lg:mb-10">
+          Rev up your imagination with our wide selection of car toys. From
+          colorful cars to interactive play sets, our baby-friendly toys offer
+          endless fun and learning opportunities.
         </p>
 
         <div className="flex gap-2">
