@@ -1,0 +1,50 @@
+[
+  {
+    "_id": 1,
+    "picture": "https://i.ibb.co/WDR40FS/sports-car1.png",
+    "name": "Velocity GT",
+    "price": "$24.99",
+    "rating": 4.5,
+    "category": "Sports Car"
+  },
+  {
+    "_id": 2,
+    "picture": "https://i.ibb.co/HqWyBk9/sports-car2.png",
+    "name": "Turbo Racer",
+    "price": "$19.99",
+    "rating": 4.2,
+    "category": "Sports Car"
+  },
+  {
+    "_id": 3,
+    "picture": "https://i.ibb.co/3BttDsh/regular-car1.png",
+    "name": "City Cruiser",
+    "price": "$14.99",
+    "rating": 4.0,
+    "category": "Regular Car"
+  },
+  {
+    "_id": 4,
+    "picture": "https://i.ibb.co/PCBRLcT/regular-car2.png",
+    "name": "Family Fun Ride",
+    "price": "$19.99",
+    "rating": 4.3,
+    "category": "Regular Car"
+  },
+  {
+    "_id": 5,
+    "picture": "https://i.ibb.co/Xtk4qTS/truck-car1.png",
+    "name": "Mega Hauler",
+    "price": "$29.99",
+    "rating": 4.7,
+    "category": "Truck"
+  },
+  {
+    "_id": 6,
+    "picture": "https://i.ibb.co/7KPRmfk/truck-car2.png",
+    "name": "Off-Road King",
+    "price": "$34.99",
+    "rating": 4.4,
+    "category": "Truck"
+  }
+]
