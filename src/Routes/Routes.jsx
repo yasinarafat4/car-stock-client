@@ -7,6 +7,7 @@ import Registration from "../pages/Registration/Registration";
 import Login from "../pages/Login/Login";
 import AddToy from "../pages/AddToy/AddToy";
 import MyToys from "../pages/MyToys/MyToys";
+import CategoryDetails from "../pages/CategoryDetails/CategoryDetails";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/categoryDetails/:id",
+        element: <CategoryDetails></CategoryDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/categories/category/${params.id}`),
       },
     ],
   },

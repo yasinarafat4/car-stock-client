@@ -1,5 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const CategoryCard = ({ category }) => {
   const { _id, picture, name, price, rating } = category;
@@ -22,7 +23,10 @@ const CategoryCard = ({ category }) => {
             fullSymbol={<FaStar></FaStar>}
           />
         </div>
-        <button className="btn btn-primary normal-case">View Details</button>
+
+        <Link to={`/categoryDetails/${_id}`}>
+          <button className="btn btn-primary normal-case">View Details</button>
+        </Link>
       </div>
     </div>
   );
