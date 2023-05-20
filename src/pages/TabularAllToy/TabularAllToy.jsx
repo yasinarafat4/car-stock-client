@@ -4,7 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const TabularAllToy = ({ toy }) => {
+const TabularAllToy = ({ toy, index }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -39,6 +39,7 @@ const TabularAllToy = ({ toy }) => {
     <>
       {/* row */}
       <tr className="text-center">
+        <td>{index + 1}</td>
         <td>
           <div className="avatar">
             <div className="mask mask-squircle w-24 h-24">

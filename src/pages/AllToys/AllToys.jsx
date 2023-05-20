@@ -51,6 +51,7 @@ const AllToys = () => {
           {/* head */}
           <thead className="text-center">
             <tr>
+              <th>#</th>
               <th>Image</th>
               <th>Seller Name</th>
               <th>Toy Name</th>
@@ -61,8 +62,12 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToys.map((toy) => (
-              <TabularAllToy key={toy._id} toy={toy}></TabularAllToy>
+            {allToys.map((toy, index) => (
+              <TabularAllToy
+                key={toy._id}
+                toy={toy}
+                index={index}
+              ></TabularAllToy>
             ))}
           </tbody>
         </table>

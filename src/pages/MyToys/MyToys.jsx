@@ -17,7 +17,7 @@ const MyToys = () => {
   }, []);
 
   const handleDelete = (id) => {
-    const proceed = Swal.fire({
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -58,6 +58,7 @@ const MyToys = () => {
           {/* head */}
           <thead className="text-center">
             <tr>
+              <th>#</th>
               <th>Image</th>
               <th>Seller Name</th>
               <th>Toy Name</th>
@@ -69,10 +70,11 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToys.map((toy) => (
+            {myToys.map((toy, index) => (
               <TabularMyToy
                 key={toy._id}
                 toy={toy}
+                index={index}
                 handleDelete={handleDelete}
               ></TabularMyToy>
             ))}
