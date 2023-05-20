@@ -12,7 +12,17 @@ const AddToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // Handle form submission logic here
+    fetch("http://localhost:5000/postToy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
     console.log(data);
   };
 
