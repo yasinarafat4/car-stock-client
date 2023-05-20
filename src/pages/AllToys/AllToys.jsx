@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TabularToy from "./TabularToy/TabularToy";
+import TabularToy from "../TabularToy/TabularToy";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
