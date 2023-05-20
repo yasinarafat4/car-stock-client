@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import "./NavigationBar.css";
 import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
@@ -7,11 +7,13 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   // Logout button
   const handleLogOut = () => {
     logOut()
-      .then()
+      .then(() => {
+        navigate("/");
+      })
       .catch((error) => console.log(error));
   };
 
