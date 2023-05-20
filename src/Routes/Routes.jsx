@@ -9,6 +9,7 @@ import AddToy from "../pages/AddToy/AddToy";
 import MyToys from "../pages/MyToys/MyToys";
 import CategoryDetails from "../pages/CategoryDetails/CategoryDetails";
 import PrivateRoute from "./PrivateRoute";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,16 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/categories/category/${params.id}`),
+      },
+      {
+        path: "/toyDetails/:id",
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addToys/${params.id}`),
       },
     ],
   },

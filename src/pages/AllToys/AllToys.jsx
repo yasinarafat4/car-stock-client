@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TabularToy from "../TabularToy/TabularToy";
+import TabularAllToy from "../TabularAllToy/TabularAllToy";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -13,13 +13,30 @@ const AllToys = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879]">
+      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879]">
         All Toys
       </h2>{" "}
-      <div>
-        {allToys.map((toy) => (
-          <TabularToy key={toy._id} toy={toy}></TabularToy>
-        ))}
+      {/* Tabular Data */}
+      <div className="overflow-x-auto w-full">
+        <table className="table w-full">
+          {/* head */}
+          <thead className="text-center">
+            <tr>
+              <th>Image</th>
+              <th>Seller Name</th>
+              <th>Toy Name</th>
+              <th>Sub-category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th>View Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allToys.map((toy) => (
+              <TabularAllToy key={toy._id} toy={toy}></TabularAllToy>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
