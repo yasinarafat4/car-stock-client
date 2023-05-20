@@ -1,35 +1,51 @@
-const TabularMyToy = ({ toy }) => {
-  const { name, sellerName } = toy;
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+
+const TabularMyToy = ({ toy, handleDelete }) => {
+  const {
+    _id,
+    name,
+    sellerName,
+    pictureUrl,
+    price,
+    quantity,
+    sellerEmail,
+    subCategory,
+  } = toy;
+
   return (
     <>
-      <tr>
+      {/* row */}
+      <tr className="text-center">
         <td>
-          <div className="flex items-center space-x-3">
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img
-                  src="/tailwind-css-component-profile-2@56w.png"
-                  alt="Avatar Tailwind CSS Component"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              <div className="text-sm opacity-50">United States</div>
+          <div className="avatar">
+            <div className="mask mask-squircle w-24 h-24">
+              <img src={pictureUrl} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
         </td>
         <td>
-          Zemlak, Daniel and Leannon
+          {sellerName}
           <br />
-          <span className="badge badge-ghost badge-sm">
-            Desktop Support Technician
-          </span>
+          <span className="badge badge-ghost badge-sm">{sellerEmail}</span>
         </td>
-        <td>Purple</td>
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
+        <td>{name}</td>
+        <td>{subCategory}</td>
+        <td>${price}</td>
+        <td>{quantity}</td>
+        <td>
+          <FaEdit
+            title="Update"
+            className="cursor-pointer text-2xl ml-7 lg:ml-10"
+          />
+        </td>
+
+        <td>
+          <FaTrashAlt
+            title="Delete"
+            onClick={() => handleDelete(_id)}
+            className="cursor-pointer text-2xl ml-7 lg:ml-10"
+          />
+        </td>
       </tr>
     </>
   );
