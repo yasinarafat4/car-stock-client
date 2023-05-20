@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FcViewDetails } from "react-icons/fc";
+import { AiOutlineEye } from "react-icons/ai";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -56,7 +56,8 @@ const TabularAllToy = ({ toy }) => {
         <td>${price}</td>
         <td>{quantity}</td>
         <td>
-          <FcViewDetails
+          <AiOutlineEye
+            title="Details"
             onClick={handleViewDetails}
             className="cursor-pointer text-2xl ml-7 lg:ml-10"
           />

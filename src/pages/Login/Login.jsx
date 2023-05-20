@@ -4,9 +4,11 @@ import loginImg from "../../assets/images/login/login-img.png";
 import "./Login.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Login = () => {
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const { logIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -36,6 +38,10 @@ const Login = () => {
           setError(error.message);
         }
       });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevVisible) => !prevVisible);
   };
 
   const handleGoogleSignIn = () => {
@@ -81,17 +87,30 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Your Password"
-                  className="input input-bordered"
-                  required
-                />
+
+              <div className="relative">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="Your Password"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div
+                  className="absolute top-10 inset-y-0 right-3 flex items-center cursor-pointer"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? (
+                    <FiEyeOff className="text-gray-500" />
+                  ) : (
+                    <FiEye className="text-gray-500" />
+                  )}
+                </div>
               </div>
               <p className="text-red-600 text-sm m-1 font-semibold">{error}</p>
               <div className="form-control">

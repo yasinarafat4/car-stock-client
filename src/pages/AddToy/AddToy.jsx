@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -22,6 +23,19 @@ const AddToy = () => {
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
+        Swal.fire(
+          "Good job!",
+          "Your favorite toy is added successfully",
+          "success"
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire(
+          "Oops...",
+          "An error occurred while adding the toy. Please try again.",
+          "error"
+        );
       });
     console.log(data);
   };
@@ -184,12 +198,13 @@ const AddToy = () => {
             <span className="text-red-500">This field is required</span>
           )}
         </div>
+
         <div className="text-center">
           <button
             type="submit"
             className="btn btn-primary normal-case md:w-1/4"
           >
-            Submit
+            Add Toy
           </button>
         </div>
       </form>

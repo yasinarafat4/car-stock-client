@@ -17,7 +17,7 @@ const ToyDetails = () => {
   } = toyDetails;
   return (
     <>
-      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold my-5 lg:my-10 text-[#2E5879]">
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold my-5 lg:my-7 text-[#2E5879]">
         {name}
       </h2>
       <div className="grid grid-cols md:grid-cols-2">

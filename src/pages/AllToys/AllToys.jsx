@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TabularAllToy from "../TabularAllToy/TabularAllToy";
+import { FiSearch } from "react-icons/fi";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -13,9 +14,22 @@ const AllToys = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879]">
-        All Toys
-      </h2>{" "}
+      <div className="md:flex justify-between">
+        <h2 className="text-center text-2xl md:text-4xl font-bold my-10 text-[#2E5879]">
+          All Toys
+        </h2>
+        <div className="flex justify-center items-center mb-5 md:0">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="h-10 py-2 px-4 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+          <button className="bg-blue-500 hover:bg-blue-600 text-white h-10 px-4 rounded-r">
+            <FiSearch className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+
       {/* Tabular Data */}
       <div className="overflow-x-auto w-full">
         <table className="table w-full">

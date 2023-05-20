@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import registerImg from "../../assets/images/register/register-img.png";
 import "./Registration.css";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Registration = () => {
   const { createNewUser, userProfile } = useContext(AuthContext);
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = (event) => {
     setError("");
@@ -50,6 +52,10 @@ const Registration = () => {
       .catch((error) => {
         setError(error.message);
       });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevVisible) => !prevVisible);
   };
 
   return (
@@ -96,17 +102,29 @@ const Registration = () => {
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Your Password"
-                  className="input input-bordered"
-                  required
-                />
+              <div className="relative">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="Your Password"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+                <div
+                  className="absolute top-10 inset-y-0 right-3 flex items-center cursor-pointer"
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? (
+                    <FiEyeOff className="text-gray-500" />
+                  ) : (
+                    <FiEye className="text-gray-500" />
+                  )}
+                </div>
               </div>
               <div className="form-control">
                 <label className="label">
