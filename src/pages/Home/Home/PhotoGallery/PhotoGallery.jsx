@@ -43,7 +43,7 @@ const PhotoGallery = () => {
 
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879]">
+      <h2 className="text-center text-3xl md:text-4xl font-bold mt-10 text-[#2E5879]">
         Car Toy Showcase
       </h2>
       <p className="text-center m-4">
