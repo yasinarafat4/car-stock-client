@@ -1,7 +1,9 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UpdateToyModal from "../UpdateToyModal/UpdateToyModal";
 import Swal from "sweetalert2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
   const {
@@ -45,10 +47,14 @@ const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
       });
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       {/* row */}
-      <tr className="text-center">
+      <tr className="text-center" data-aos="fade-up">
         <td>{index + 1}</td>
         <td>
           <div className="avatar">

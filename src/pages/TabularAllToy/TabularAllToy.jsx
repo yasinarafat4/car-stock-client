@@ -3,6 +3,9 @@ import { AiOutlineEye } from "react-icons/ai";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TabularAllToy = ({ toy, index }) => {
   const { user } = useContext(AuthContext);
@@ -35,10 +38,14 @@ const TabularAllToy = ({ toy, index }) => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       {/* row */}
-      <tr className="text-center">
+      <tr className="text-center" data-aos="fade-up">
         <td>{index + 1}</td>
         <td>
           <div className="avatar">

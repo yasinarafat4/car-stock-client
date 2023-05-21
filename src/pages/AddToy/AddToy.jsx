@@ -59,7 +59,7 @@ const AddToy = () => {
               id="pictureUrl"
               {...register("pictureUrl", { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded"
-              defaultValue="https://i.ibb.co/Xtk4qTS/truck-car1.png"
+              placeholder="Photo URL"
             />
             {errors.pictureUrl && (
               <span className="text-red-500">This field is required</span>
@@ -75,7 +75,7 @@ const AddToy = () => {
               id="name"
               {...register("name", { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded"
-              defaultValue="Truck"
+              placeholder="Enter Toy Name"
             />
             {errors.name && (
               <span className="text-red-500">This field is required</span>
@@ -142,6 +142,7 @@ const AddToy = () => {
               id="price"
               {...register("price", { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded"
+              placeholder="Enter Price"
             />
             {errors.price && (
               <span className="text-red-500">This field is required</span>
@@ -159,7 +160,7 @@ const AddToy = () => {
               id="rating"
               {...register("rating", { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded"
-              defaultValue="4"
+              placeholder="Give Ratings"
             />
             {errors.rating && (
               <span className="text-red-500">This field is required</span>
@@ -175,7 +176,7 @@ const AddToy = () => {
               id="quantity"
               {...register("quantity", { required: true })}
               className="w-full px-4 py-2 border border-gray-300 rounded"
-              defaultValue="50"
+              placeholder="Put Available Quantity"
             />
             {errors.quantity && (
               <span className="text-red-500">This field is required</span>
@@ -192,7 +193,7 @@ const AddToy = () => {
             {...register("description", { required: true })}
             className="w-full px-4 py-2 border border-gray-300 rounded"
             rows={4}
-            defaultValue=" Discover the finest craftsmanship, intricate details, and vibrant colors that bring these toy cars to life."
+            placeholder="Write Description"
           ></textarea>
           {errors.description && (
             <span className="text-red-500">This field is required</span>
