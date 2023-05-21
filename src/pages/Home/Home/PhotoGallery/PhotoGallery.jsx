@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import image1 from "../../../../assets/images/gallery-img/image1.png";
 import image2 from "../../../../assets/images/gallery-img/image2.png";
 import image3 from "../../../../assets/images/gallery-img/image3.png";
@@ -41,6 +45,10 @@ const PhotoGallery = () => {
     document.body.style.overflow = "auto";
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
       <h2 className="text-center text-3xl md:text-4xl font-bold mt-10 text-[#2E5879]">
@@ -57,7 +65,8 @@ const PhotoGallery = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="w-1/2 md:w-1/3 lg:w-1/4 p-2 transform transition-transform duration-300 hover:scale-110"
+            className="w-1/2 md:w-1/3 lg:w-1/4 p-2 hover:scale-110"
+            data-aos="zoom-in"
           >
             <img
               src={image}
@@ -70,10 +79,7 @@ const PhotoGallery = () => {
       </div>
       {selectedImage && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50">
-          <div
-            className="max-w-4xl max-h-4xl"
-            style={{ animation: "fadeIn 0.3s ease", position: "relative" }}
-          >
+          <div className="max-w-4xl max-h-4xl">
             <img
               src={selectedImage}
               alt="Full-size Image"

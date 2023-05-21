@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import TabularAllToy from "../TabularAllToy/TabularAllToy";
 import { FiSearch } from "react-icons/fi";
 import { useLoaderData } from "react-router-dom";
+import useSetTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+  useSetTitle("All Toys");
+
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(0);

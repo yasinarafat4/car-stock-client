@@ -55,8 +55,7 @@ const reviews = [
 
 const Reviews = () => {
   useEffect(() => {
-    AOS.init({ duration: 800 });
-    AOS.refresh();
+    AOS.init();
   }, []);
 
   return (

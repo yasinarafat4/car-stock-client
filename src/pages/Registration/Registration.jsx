@@ -4,8 +4,11 @@ import registerImg from "../../assets/images/register/register-img.png";
 import "./Registration.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import useSetTitle from "../../hooks/useTitle";
 
 const Registration = () => {
+  useSetTitle("Register");
+
   const { createNewUser, userProfile } = useContext(AuthContext);
 
   const [error, setError] = useState("");

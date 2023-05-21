@@ -5,8 +5,11 @@ import "./Login.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import useSetTitle from "../../hooks/useTitle";
 
 const Login = () => {
+  useSetTitle("Login");
+
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 

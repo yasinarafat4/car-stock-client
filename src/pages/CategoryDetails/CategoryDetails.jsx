@@ -2,8 +2,11 @@ import { useLoaderData } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useEffect, useState } from "react";
+import useSetTitle from "../../hooks/useTitle";
 
 const CategoryDetails = () => {
+  useSetTitle("Category Details");
+
   const categoryDetails = useLoaderData();
   const { name, picture, price, rating, description } = categoryDetails;
   const [placeholderRating, setPlaceholderRating] = useState(rating);

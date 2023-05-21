@@ -1,8 +1,11 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
+import useSetTitle from "../../hooks/useTitle";
 
 const ToyDetails = () => {
+  useSetTitle("Toy Details");
+
   const toyDetails = useLoaderData();
   const {
     name,
