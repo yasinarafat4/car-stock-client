@@ -1,18 +1,30 @@
 import { useEffect, useState } from "react";
 import TabularAllToy from "../TabularAllToy/TabularAllToy";
 import { FiSearch } from "react-icons/fi";
+import { useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [toysPerPage, setToysPerPage] = useState(20);
+
+  const { totalToys } = useLoaderData();
+
+  const totalPages = Math.ceil(totalToys / toysPerPage);
+
+  const pageNumbers = [...Array(totalPages).keys()];
 
   useEffect(() => {
-    fetch("http://localhost:5000/addToys")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllToys(data);
-      });
-  }, []);
+    async function fetchData() {
+      const response = await fetch(
+        `http://localhost:5000/addToys?page=${currentPage}&limit=${toysPerPage}`
+      );
+      const data = await response.json();
+      setAllToys(data);
+    }
+    fetchData();
+  }, [currentPage, toysPerPage]);
 
   // For Search
   const handleSearch = () => {
@@ -22,6 +34,12 @@ const AllToys = () => {
         setAllToys(data);
       });
   };
+
+  const options = [5, 10, 15, 20, 25, 30];
+  function handleSelectChange(event) {
+    setToysPerPage(parseInt(event.target.value));
+    setCurrentPage(0);
+  }
 
   return (
     <div>
@@ -71,6 +89,31 @@ const AllToys = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      {/* Pagination Button */}
+      <div className="btn-group flex justify-center my-4">
+        {pageNumbers.map((number) => (
+          <button
+            className={
+              currentPage === number ? "btn btn-sm btn-active" : "btn btn-sm"
+            }
+            key={number}
+            onClick={() => setCurrentPage(number)}
+          >
+            {number + 1}
+          </button>
+        ))}
+        <select
+          className="bg-[#ca3325] text-white rounded-r-md"
+          value={toysPerPage}
+          onChange={handleSelectChange}
+        >
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
