@@ -21,7 +21,7 @@ const AllToys = () => {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `http://localhost:5000/addToys?page=${currentPage}&limit=${toysPerPage}`
+        `https://car-stock-server.vercel.app/addToys?page=${currentPage}&limit=${toysPerPage}`
       );
       const data = await response.json();
       setAllToys(data);
@@ -31,7 +31,7 @@ const AllToys = () => {
 
   // For Search
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchToys/${searchText}`)
+    fetch(`https://car-stock-server.vercel.app/searchToys/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);

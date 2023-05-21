@@ -69,7 +69,7 @@ const Reviews = () => {
             <div
               key={review.id}
               className="bg-white rounded-lg shadow-lg p-6 h-full w-full flex flex-col"
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-duration="1000"
             >
               <div className="flex items-center mb-4">

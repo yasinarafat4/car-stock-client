@@ -25,8 +25,9 @@ const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
 
   // Toy update handler
   const handleToyUpdate = (data) => {
-    fetch(`http://localhost:5000/updateToy/${data?._id}`, {
-      method: "PUT",
+    console.log(data);
+    fetch(`https://car-stock-server.vercel.app/updateToy/${data?._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },

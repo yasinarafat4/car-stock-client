@@ -12,14 +12,14 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([]);
   const [control, setControl] = useState(false);
 
-  const url = `http://localhost:5000/myToys?email=${user.email}`;
+  const url = `https://car-stock-server.vercel.app/myToys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
       });
-  }, [control]);
+  }, []);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -32,7 +32,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myToys/${id}`, {
+        fetch(`https://car-stock-server.vercel.app/myToys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
