@@ -1,10 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { useEffect, useState } from "react";
 
 const CategoryDetails = () => {
   const categoryDetails = useLoaderData();
   const { name, picture, price, rating, description } = categoryDetails;
+  const [placeholderRating, setPlaceholderRating] = useState(rating);
+
+  useEffect(() => {
+    setPlaceholderRating(rating);
+  }, [rating]);
+
   return (
     <div>
       <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879]">
@@ -22,7 +29,7 @@ const CategoryDetails = () => {
             </p>
             <div>
               <Rating
-                placeholderRating={rating}
+                placeholderRating={placeholderRating}
                 emptySymbol={
                   <FaRegStar className="text-yellow-400"></FaRegStar>
                 }
