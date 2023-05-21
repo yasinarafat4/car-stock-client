@@ -1,15 +1,16 @@
 .btn-blogs {
-  padding: 10px 15px;
   color: #e72e2e;
+  padding: 6px 16px;
   border: 2px solid #e72e2e;
-  font-weight: 600;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .btn-blogs:hover {
-  padding: 10px 15px;
+  padding: 6px 16px;
   color: #ffffff;
   background-color: #ca3325;
-  border-radius: 10px;
+  border-radius: 4px;
   transition: 0.3s;
 }
+
+/* font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline */

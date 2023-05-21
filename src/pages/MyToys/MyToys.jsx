@@ -7,6 +7,8 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
 
   const [myToys, setMyToys] = useState([]);
+  const [control, setControl] = useState(false);
+
   const url = `http://localhost:5000/myToys?email=${user.email}`;
   useEffect(() => {
     fetch(url)
@@ -14,7 +16,7 @@ const MyToys = () => {
       .then((data) => {
         setMyToys(data);
       });
-  }, []);
+  }, [control]);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -76,6 +78,8 @@ const MyToys = () => {
                 toy={toy}
                 index={index}
                 handleDelete={handleDelete}
+                control={control}
+                setControl={setControl}
               ></TabularMyToy>
             ))}
           </tbody>

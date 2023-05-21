@@ -124,7 +124,7 @@ const Login = () => {
               <div className="flex justify-center items-center gap-4 mt-3 mb-3">
                 <button
                   onClick={handleGoogleSignIn}
-                  className="btn btn-primary normal-case gap-2"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline gap-2 flex justify-center items-center"
                 >
                   <FcGoogle
                     className="rounded-full text-lg"

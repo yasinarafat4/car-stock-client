@@ -202,7 +202,7 @@ const AddToy = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="btn btn-primary normal-case md:w-1/4"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline normal-case md:w-1/4"
           >
             Add Toy
           </button>

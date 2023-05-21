@@ -21,10 +21,12 @@ const Banner = () => {
 
         <div className="flex gap-2">
           <Link to="/blogs">
-            <button className="btn-blogs">Our Blogs</button>
+            <button className="btn-blogs ">Our Blogs</button>
           </Link>
           <Link to="/alltoys">
-            <button className="btn btn-primary normal-case">View Toys</button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              View Toys
+            </button>
           </Link>
         </div>
       </div>

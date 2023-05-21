@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import "./NavigationBar.css";
-import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaPowerOff, FaSignInAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -94,14 +94,14 @@ const NavigationBar = () => {
             onClick={handleLogOut}
             className="flex items-center btn-logout"
           >
-            <FaSignOutAlt className="mr-2" />
+            <FaPowerOff className="mr-2" />
             Log Out
           </button>
         ) : (
           <Link to="/login">
             {" "}
             {/* Login Button  */}
-            <button className="btn btn-primary normal-case">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex justify-center items-center">
               <FaSignInAlt className="mr-2" />
               Log In
             </button>

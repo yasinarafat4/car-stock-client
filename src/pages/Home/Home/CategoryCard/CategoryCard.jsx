@@ -49,7 +49,7 @@ const CategoryCard = ({ category }) => {
         </div>
 
         <button
-          className="btn btn-primary normal-case"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           onClick={handleViewDetails}
         >
           View Details
