@@ -9,7 +9,7 @@ const ShopByCategory = () => {
   const [tab, setTab] = useState("Sports Car");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/categories/${tab}`)
+    fetch(`https://car-stock-server.vercel.app/categories/${tab}`)
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
