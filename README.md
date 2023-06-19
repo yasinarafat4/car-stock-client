@@ -1,4 +1,4 @@
-# Kitchen Whiz Repository
+# Car Stock Repository
 
 This is a React-based Cars Toy website that allows users to see the toys of some excellent car and it's category.
 
