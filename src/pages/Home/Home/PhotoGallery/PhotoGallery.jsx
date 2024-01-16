@@ -1,8 +1,12 @@
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
+import { useState } from "react";
 import image1 from "../../../../assets/images/gallery-img/image1.png";
+import image10 from "../../../../assets/images/gallery-img/image10.png";
+import image11 from "../../../../assets/images/gallery-img/image11.png";
+import image12 from "../../../../assets/images/gallery-img/image12.png";
 import image2 from "../../../../assets/images/gallery-img/image2.png";
 import image3 from "../../../../assets/images/gallery-img/image3.png";
 import image4 from "../../../../assets/images/gallery-img/image4.png";
@@ -11,10 +15,6 @@ import image6 from "../../../../assets/images/gallery-img/image6.png";
 import image7 from "../../../../assets/images/gallery-img/image7.png";
 import image8 from "../../../../assets/images/gallery-img/image8.png";
 import image9 from "../../../../assets/images/gallery-img/image9.png";
-import image10 from "../../../../assets/images/gallery-img/image10.png";
-import image11 from "../../../../assets/images/gallery-img/image11.png";
-import image12 from "../../../../assets/images/gallery-img/image12.png";
-import { useState } from "react";
 
 const PhotoGallery = () => {
   const images = [
@@ -51,6 +51,13 @@ const PhotoGallery = () => {
 
   return (
     <div>
+      {/* Title */}
+      <SectionTitle
+        heading={"Car Toy Showcase"}
+        subHeading={
+          "Indulge in the wonders of our Car Toy Showcase, where a mesmerizing collection of miniature automobiles awaits. From classic vintage cars to cutting-edge futuristic models, our gallery transports you into a world  of imagination and play. Discover the finest craftsmanship, intricate details, and vibrant colors that bring these toy cars to life."
+        }
+      />
       <h2 className="text-center text-3xl md:text-4xl font-bold mt-10 text-[#2E5879]">
         Car Toy Showcase
       </h2>
