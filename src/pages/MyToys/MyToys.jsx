@@ -54,7 +54,7 @@ const MyToys = () => {
   };
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879]">
+      <h2 className="ms-4 text-start text-4xl font-bold my-10 text-[#2E5879] dark:text-slate-300">
         My Toys
       </h2>
 

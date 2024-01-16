@@ -1,7 +1,8 @@
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 import Rating from "react-rating";
+import SectionTitle from "../../../../components/SectionTitle";
 
 const reviews = [
   {
@@ -61,9 +62,8 @@ const Reviews = () => {
   return (
     <div className="bg-gray-100 py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl md:text-4xl font-bold my-10 text-[#2E5879]">
-          Customer Reviews
-        </h2>
+        {/* Title */}
+        <SectionTitle heading={"Customer Reviews"} subHeading={"TODO"} />
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div

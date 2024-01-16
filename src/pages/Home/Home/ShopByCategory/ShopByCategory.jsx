@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import CategoryCard from "../CategoryCard/CategoryCard";
-import { Tab, Tabs, TabList } from "react-tabs";
+import { Tab, TabList, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import SectionTitle from "../../../../components/SectionTitle";
+import CategoryCard from "../CategoryCard/CategoryCard";
 import "./ShopByCategory.css";
 
 const ShopByCategory = () => {
@@ -18,9 +19,9 @@ const ShopByCategory = () => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl md:text-4xl font-bold mt-10 text-[#2E5879]">
-        Shop By Category
-      </h2>
+      {/* Title */}
+      <SectionTitle heading={"Shop By Category"} subHeading={"TODO"} />
+
       <p className="text-center font-medium m-4">
         <Tabs>
           <TabList className="custom-tab-list">

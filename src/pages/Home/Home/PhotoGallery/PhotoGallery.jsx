@@ -15,6 +15,7 @@ import image6 from "../../../../assets/images/gallery-img/image6.png";
 import image7 from "../../../../assets/images/gallery-img/image7.png";
 import image8 from "../../../../assets/images/gallery-img/image8.png";
 import image9 from "../../../../assets/images/gallery-img/image9.png";
+import SectionTitle from "../../../../components/SectionTitle";
 
 const PhotoGallery = () => {
   const images = [
@@ -58,16 +59,6 @@ const PhotoGallery = () => {
           "Indulge in the wonders of our Car Toy Showcase, where a mesmerizing collection of miniature automobiles awaits. From classic vintage cars to cutting-edge futuristic models, our gallery transports you into a world  of imagination and play. Discover the finest craftsmanship, intricate details, and vibrant colors that bring these toy cars to life."
         }
       />
-      <h2 className="text-center text-3xl md:text-4xl font-bold mt-10 text-[#2E5879]">
-        Car Toy Showcase
-      </h2>
-      <p className="text-center m-4">
-        Indulge in the wonders of our Car Toy Showcase, where a mesmerizing
-        collection of miniature automobiles awaits. From classic vintage cars to
-        cutting-edge futuristic models, our gallery transports you into a world
-        of imagination and play. Discover the finest craftsmanship, intricate
-        details, and vibrant colors that bring these toy cars to life.
-      </p>
       <div className="flex flex-wrap justify-center items-center">
         {images.map((image, index) => (
           <div
