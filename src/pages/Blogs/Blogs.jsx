@@ -4,13 +4,13 @@ const Blogs = () => {
   useSetTitle("Blogs");
 
   return (
-    <div className="m-4">
-      <h2 className="text-center text-3xl md:text-4xl font-bold my-10 text-[#2E5879]">
+    <div className="p-4 dark:bg-slate-900 dark:text-slate-300">
+      <h2 className="ms-4 text-start text-4xl font-bold my-5 text-[#2E5879] dark:text-slate-300">
         Frequently Asked Questions
       </h2>
       <div
         tabIndex={0}
-        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2 dark:bg-slate-900 dark:text-slate-300"
       >
         <div className="collapse-title text-xl font-medium">
           1. What is an access token and refresh token? How do they work and
@@ -40,7 +40,7 @@ const Blogs = () => {
       </div>
       <div
         tabIndex={0}
-        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2 dark:bg-slate-900 dark:text-slate-300"
       >
         <div className="collapse-title text-xl font-medium">
           2. Compare SQL and NoSQL databases.
@@ -76,7 +76,7 @@ const Blogs = () => {
       </div>
       <div
         tabIndex={0}
-        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2 dark:bg-slate-900 dark:text-slate-300"
       >
         <div className="collapse-title text-xl font-medium">
           3. What is express js? What is Nest JS?
@@ -103,7 +103,7 @@ const Blogs = () => {
       </div>
       <div
         tabIndex={0}
-        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mb-2 dark:bg-slate-900 dark:text-slate-300"
       >
         <div className="collapse-title text-xl font-medium">
           4. What is MongoDB aggregate and how does it work?

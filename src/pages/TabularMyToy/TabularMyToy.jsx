@@ -1,9 +1,9 @@
-import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import UpdateToyModal from "../UpdateToyModal/UpdateToyModal";
-import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
+import UpdateToyModal from "../UpdateToyModal/UpdateToyModal";
 
 const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
   const {
@@ -55,25 +55,28 @@ const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
   return (
     <>
       {/* row */}
-      <tr className="text-center" data-aos="fade-up">
-        <td>{index + 1}</td>
-        <td>
+      <tr
+        className="text-center"
+        data-aos="fade-up"
+      >
+        <td className="dark:bg-slate-900 dark:text-slate-300">{index + 1}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           <div className="avatar">
             <div className="mask mask-squircle w-24 h-24">
               <img src={pictureUrl} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
         </td>
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           {sellerName}
           <br />
           <span className="badge badge-ghost badge-sm">{sellerEmail}</span>
         </td>
-        <td>{name}</td>
-        <td>{subCategory}</td>
-        <td>${price}</td>
-        <td>{quantity}</td>
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{name}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{subCategory}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">${price}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{quantity}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           <FaEdit
             title="Update"
             className="cursor-pointer text-2xl ml-7 lg:ml-10 text-blue-500"
@@ -81,7 +84,7 @@ const TabularMyToy = ({ toy, index, handleDelete, control, setControl }) => {
           />
         </td>
 
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           <FaTrashAlt
             title="Delete"
             onClick={() => handleDelete(_id)}

@@ -45,8 +45,8 @@ const AddToy = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-center text-4xl font-bold mt-10 text-[#2E5879]">
+    <div className="dark:bg-slate-900 dark:text-slate-300">
+      <h2 className="ms-4 text-start text-4xl font-bold mt-10 text-[#2E5879] dark:text-slate-300">
         Add Your Favorite Toy
       </h2>
       <form
@@ -62,7 +62,7 @@ const AddToy = () => {
               type="url"
               id="pictureUrl"
               {...register("pictureUrl", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               placeholder="Photo URL"
             />
             {errors.pictureUrl && (
@@ -78,7 +78,7 @@ const AddToy = () => {
               type="text"
               id="name"
               {...register("name", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               placeholder="Enter Toy Name"
             />
             {errors.name && (
@@ -97,7 +97,7 @@ const AddToy = () => {
               id="sellerName"
               readOnly
               defaultValue={user?.displayName}
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100"
+              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100 dark:text-slate-800"
               {...register("sellerName", { required: true })}
             />
           </div>
@@ -111,7 +111,7 @@ const AddToy = () => {
               id="sellerEmail"
               readOnly
               defaultValue={user?.email}
-              className="w-full px-4 py-2 border border-gray-300 rounded bg-gray-100"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               {...register("sellerEmail", { required: true })}
             />
           </div>
@@ -125,7 +125,7 @@ const AddToy = () => {
             <select
               id="subCategory"
               {...register("subCategory", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
             >
               <option value="">Select a sub-category</option>
               <option value="Sports Car">Sports Car</option>
@@ -145,7 +145,7 @@ const AddToy = () => {
               type="number"
               id="price"
               {...register("price", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               placeholder="Enter Price"
             />
             {errors.price && (
@@ -163,7 +163,7 @@ const AddToy = () => {
               type="number"
               id="rating"
               {...register("rating", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               placeholder="Give Ratings"
             />
             {errors.rating && (
@@ -179,7 +179,7 @@ const AddToy = () => {
               type="number"
               id="quantity"
               {...register("quantity", { required: true })}
-              className="w-full px-4 py-2 border border-gray-300 rounded"
+              className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
               placeholder="Put Available Quantity"
             />
             {errors.quantity && (
@@ -195,7 +195,7 @@ const AddToy = () => {
           <textarea
             id="description"
             {...register("description", { required: true })}
-            className="w-full px-4 py-2 border border-gray-300 rounded"
+            className="w-full px-4 py-2 border border-gray-300 rounded dark:text-slate-800"
             rows={4}
             placeholder="Write Description"
           ></textarea>

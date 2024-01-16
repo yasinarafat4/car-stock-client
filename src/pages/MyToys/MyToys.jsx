@@ -53,8 +53,8 @@ const MyToys = () => {
     });
   };
   return (
-    <div>
-      <h2 className="ms-4 text-start text-4xl font-bold my-10 text-[#2E5879] dark:text-slate-300">
+    <>
+      <h2 className="ms-4 text-start text-4xl font-bold my-10 text-[#2E5879]  dark:bg-slate-900 dark:text-slate-300">
         My Toys
       </h2>
 
@@ -62,16 +62,16 @@ const MyToys = () => {
         <table className="table w-full">
           {/* head */}
           <thead className="text-center">
-            <tr>
-              <th>#</th>
-              <th>Image</th>
-              <th>Seller Name</th>
-              <th>Toy Name</th>
-              <th>Sub-category</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Update Data</th>
-              <th>Delete Toy</th>
+            <tr className="dark:bg-slate-900 dark:text-slate-300">
+              <th className="dark:bg-slate-900 dark:text-slate-300">#</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Image</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Seller Name</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Toy Name</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Sub-category</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Price</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Available Quantity</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Update Data</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Delete Toy</th>
             </tr>
           </thead>
           <tbody>
@@ -83,12 +83,12 @@ const MyToys = () => {
                 handleDelete={handleDelete}
                 control={control}
                 setControl={setControl}
-              ></TabularMyToy>
+              />
             ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 
