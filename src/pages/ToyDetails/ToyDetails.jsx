@@ -20,14 +20,17 @@ const ToyDetails = () => {
   } = toyDetails;
   return (
     <>
-      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold my-5 lg:my-7 text-[#2E5879]">
+      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879] dark:text-slate-300">
         {name}
       </h2>
-      <div className="grid grid-cols md:grid-cols-2">
+      <div className="grid grid-cols lg:grid-cols-2">
         <figure>
-          <img className="rounded-lg my-2" src={pictureUrl} alt="Album" />
+          <img
+            className="rounded-lg my-4 w-4/5 md:w-3/5 lg:w-11/12 mx-auto"
+            src={pictureUrl}
+            alt="Album"
+          />
         </figure>
-
         <div className="flex flex-col justify-center items-center">
           <p className="text-center px-2">{description}</p>
           <div className="grid grid-cols-2 gap-2 md:gap-4 my-4">

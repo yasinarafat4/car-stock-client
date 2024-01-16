@@ -74,21 +74,27 @@ const AllToys = () => {
             <tr>
               <th className="dark:bg-slate-900 dark:text-slate-300">#</th>
               <th className="dark:bg-slate-900 dark:text-slate-300">Image</th>
-              <th className="dark:bg-slate-900 dark:text-slate-300">Seller Name</th>
-              <th className="dark:bg-slate-900 dark:text-slate-300">Toy Name</th>
-              <th className="dark:bg-slate-900 dark:text-slate-300">Sub-category</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">
+                Seller Name
+              </th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">
+                Toy Name
+              </th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">
+                Sub-category
+              </th>
               <th className="dark:bg-slate-900 dark:text-slate-300">Price</th>
-              <th className="dark:bg-slate-900 dark:text-slate-300">Available Quantity</th>
-              <th className="dark:bg-slate-900 dark:text-slate-300">View Details</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">
+                Available Quantity
+              </th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">
+                View Details
+              </th>
             </tr>
           </thead>
           <tbody>
             {allToys?.map((toy, index) => (
-              <TabularAllToy
-                key={toy?._id}
-                toy={toy}
-                index={index}
-              ></TabularAllToy>
+              <TabularAllToy key={toy?._id} toy={toy} index={index} />
             ))}
           </tbody>
         </table>
