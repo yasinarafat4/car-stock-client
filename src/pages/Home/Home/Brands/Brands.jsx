@@ -24,7 +24,13 @@ const Brands = () => {
   return (
     <div className="mb-10">
       {/* Title */}
-      <SectionTitle heading={" Our Brands"} subHeading={"TODO"} />
+      <SectionTitle
+        heading={"Our Brands"}
+        subHeading={
+          "Explore top-quality car toys from renowned brands. Each brand brings a unique touch to the world of miniature vehicles, ensuring an exceptional collection for every car enthusiast."
+        }
+      />
+
       <Marquee
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}

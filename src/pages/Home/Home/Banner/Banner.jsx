@@ -1,4 +1,3 @@
-import "./Banner.css";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
@@ -21,10 +20,12 @@ const Banner = () => {
 
         <div className="flex gap-2">
           <Link to="/blogs">
-            <button className="btn-blogs ">Our Blogs</button>
+            <button className="bg-transparent text-red-500 border border-red-500 px-2 md:px-4 py-1 md:py-2 text-sm md:text-base rounded-md hover:bg-red-500 hover:text-white duration-300">
+              Our Blogs
+            </button>
           </Link>
           <Link to="/alltoys">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-blue-600 hover:bg-blue-700 duration-300 text-white py-1 md:py-2 px-2 md:px-4 text-sm md:text-base rounded-md focus:outline-none focus:shadow-outline">
               View Toys
             </button>
           </Link>

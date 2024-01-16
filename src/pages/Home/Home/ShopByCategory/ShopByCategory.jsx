@@ -20,7 +20,7 @@ const ShopByCategory = () => {
   return (
     <div className="dark:bg-slate-900 dark:text-slate-300">
       {/* Title */}
-      <SectionTitle heading={"Shop By Category"} subHeading={"TODO"} />
+      <SectionTitle heading={"Shop By Category"} subHeading={"Explore a variety of playthings for joyful entertainment. Find the perfect miniature cars to delight and entertain your child."} />
 
       <p className="text-center font-medium m-4">
         <Tabs>

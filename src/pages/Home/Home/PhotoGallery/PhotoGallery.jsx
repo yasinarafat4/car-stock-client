@@ -56,9 +56,10 @@ const PhotoGallery = () => {
       <SectionTitle
         heading={"Car Toy Showcase"}
         subHeading={
-          "Indulge in the wonders of our Car Toy Showcase, where a mesmerizing collection of miniature automobiles awaits. From classic vintage cars to cutting-edge futuristic models, our gallery transports you into a world  of imagination and play. Discover the finest craftsmanship, intricate details, and vibrant colors that bring these toy cars to life."
+          "Immerse yourself in a world of imagination, discovering exquisite craftsmanship, intricate details, and vibrant colors that bring these toy cars to life."
         }
       />
+
       <div className="flex flex-wrap justify-center items-center">
         {images.map((image, index) => (
           <div

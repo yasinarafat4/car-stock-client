@@ -16,7 +16,7 @@ const AllToys = () => {
 
   const totalPages = Math.max(Math.ceil(totalToys / toysPerPage), 1);
 
-  const pageNumbers = [...Array(totalPages).keys()];
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index);
 
   useEffect(() => {
     async function fetchData() {
