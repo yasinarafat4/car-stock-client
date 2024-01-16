@@ -1,10 +1,10 @@
-import logo from "../../../assets/logo.png";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import logo from "../../../assets/logo.png";
 
 const Footer = () => {
   return (
-    <div className=" p-10 bg-slate-300 text-black">
+    <div className="p-10 bg-slate-300 text-black dark:bg-slate-900 dark:text-slate-300">
       <footer className="footer pb-6">
         <div>
           <Link to="/">

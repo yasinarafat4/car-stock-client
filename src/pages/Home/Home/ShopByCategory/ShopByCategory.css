@@ -20,6 +20,7 @@
 
 .custom-tab:hover {
   background-color: #f1f1f1;
+  color: black;
 }
 
 .custom-tab:focus {

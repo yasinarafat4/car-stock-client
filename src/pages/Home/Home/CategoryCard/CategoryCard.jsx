@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../../../providers/AuthProvider";
 
 const CategoryCard = ({ category }) => {
@@ -29,7 +29,7 @@ const CategoryCard = ({ category }) => {
   };
 
   return (
-    <div className="m-4 shadow-lg p-4 flex justify- items-center gap-4">
+    <div className="m-4 shadow-lg p-4 flex justify-center items-center gap-4">
       <img className="w-1/2 rounded-md" src={picture} alt="" />
       <div className="space-y-3">
         <p>

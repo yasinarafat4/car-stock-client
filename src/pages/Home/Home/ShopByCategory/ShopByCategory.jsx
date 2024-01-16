@@ -18,20 +18,20 @@ const ShopByCategory = () => {
   }, [tab]);
 
   return (
-    <div>
+    <div className="dark:bg-slate-900 dark:text-slate-300">
       {/* Title */}
       <SectionTitle heading={"Shop By Category"} subHeading={"TODO"} />
 
       <p className="text-center font-medium m-4">
         <Tabs>
           <TabList className="custom-tab-list">
-            <Tab className="custom-tab" onClick={() => setTab("Sports Car")}>
+            <Tab className="custom-tab dark:text-slate-300" onClick={() => setTab("Sports Car")}>
               Sports Car
             </Tab>
-            <Tab className="custom-tab" onClick={() => setTab("Regular Car")}>
+            <Tab className="custom-tab dark:text-slate-300" onClick={() => setTab("Regular Car")}>
               Regular Car
             </Tab>
-            <Tab className="custom-tab" onClick={() => setTab("Truck")}>
+            <Tab className="custom-tab dark:text-slate-300" onClick={() => setTab("Truck")}>
               Truck
             </Tab>
           </TabList>

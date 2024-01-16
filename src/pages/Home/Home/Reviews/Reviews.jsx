@@ -60,15 +60,15 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 py-8">
+    <div className="bg-gray-100 py-8 dark:bg-slate-900 dark:text-slate-300">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <SectionTitle heading={"Customer Reviews"} subHeading={"TODO"} />
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-white rounded-lg shadow-lg p-6 h-full w-full flex flex-col"
+              className="bg-white rounded-lg shadow-lg p-6 h-full w-full flex flex-col dark:bg-slate-900"
               data-aos="fade-right"
               data-aos-duration="1000"
             >
@@ -81,12 +81,12 @@ const Reviews = () => {
                   />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-slate-300">
                     {review.name}
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-800">{review.comment}</p>
+              <p className="text-gray-800 dark:text-slate-300">{review.comment}</p>
               <Rating
                 initialRating={review.rating}
                 emptySymbol={<span className="text-gray-300">&#9734;</span>}

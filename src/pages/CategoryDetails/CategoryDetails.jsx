@@ -1,7 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import useSetTitle from "../../hooks/useTitle";
 
 const CategoryDetails = () => {
@@ -17,12 +17,12 @@ const CategoryDetails = () => {
 
   return (
     <div>
-      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879]">
+      <h2 className="text-center text-4xl font-bold my-10 text-[#2E5879] dark:text-slate-300">
         {name}
       </h2>
       <div className="grid grid-cols md:grid-cols-2">
         <figure>
-          <img className="rounded-lg my-2" src={picture} alt="Album" />
+          <img className="rounded-lg my-4 mx-4" src={picture} alt="Album" />
         </figure>
         <div className="flex flex-col justify-center items-center ">
           <p className="text-center px-2">{description}</p>
