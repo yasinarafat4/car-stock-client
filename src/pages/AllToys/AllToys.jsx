@@ -14,7 +14,7 @@ const AllToys = () => {
 
   const { totalToys } = useLoaderData();
 
-  const totalPages = Math.ceil(totalToys / toysPerPage);
+  const totalPages = Math.max(Math.ceil(totalToys / toysPerPage), 1);
 
   const pageNumbers = [...Array(totalPages).keys()];
 

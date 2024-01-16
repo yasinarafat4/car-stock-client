@@ -8,13 +8,13 @@ import ShopByCategory from "./ShopbyCategory/ShopbyCategory";
 const Home = () => {
   useSetTitle("Home");
   return (
-    <div>
-      <Banner></Banner>
-      <PhotoGallery></PhotoGallery>
-      <ShopByCategory></ShopByCategory>
-      <Brands></Brands>
-      <Reviews></Reviews>
-    </div>
+    <>
+      <Banner />
+      <PhotoGallery />
+      <ShopByCategory />
+      <Brands />
+      <Reviews />
+    </>
   );
 };
 

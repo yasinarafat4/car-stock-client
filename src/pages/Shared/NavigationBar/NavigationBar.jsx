@@ -132,7 +132,6 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../providers/AuthProvider";
 
-
 const NavigationBar = () => {
   // States
   const [navToggle, setNavToggle] = useState(false);
@@ -167,18 +166,14 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="navbar sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-800  dark:text-white lg:pr-3">
+    <nav className="navbar sticky top-0 z-50 bg-slate-200 shadow-lg dark:bg-slate-800  dark:text-white lg:pr-3">
       <div className="flex-1">
         <Link
           to="/"
           className="cursor-pointer text-2xl normal-case font-semibold"
         >
           <div className="flex justify-center items-center">
-            <img
-              className="w-24 md:w-28"
-              src={logo}
-              alt=""
-            />
+            <img className="w-24 md:w-28" src={logo} alt="" />
           </div>
         </Link>
       </div>
@@ -210,6 +205,36 @@ const NavigationBar = () => {
               All Toys
             </p>
           </NavLink>
+          {user && (
+            <>
+              <NavLink
+                to="/mytoys"
+                onClick={() => setNavToggle(!navToggle)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-blue-500"
+                    : "text-slate-600 dark:text-slate-300"
+                }
+              >
+                <p className="text-lg lg:text-base 2xl:text-lg font-medium hover:duration-500">
+                  My Toys
+                </p>
+              </NavLink>
+              <NavLink
+                to="/addtoys"
+                onClick={() => setNavToggle(!navToggle)}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-blue-500"
+                    : "text-slate-600 dark:text-slate-300"
+                }
+              >
+                <p className="text-lg lg:text-base 2xl:text-lg font-medium hover:duration-500">
+                  Add Toys
+                </p>
+              </NavLink>
+            </>
+          )}
           <NavLink
             to="/blogs"
             onClick={() => setNavToggle(!navToggle)}
@@ -218,7 +243,7 @@ const NavigationBar = () => {
             }
           >
             <p className="text-lg lg:text-base 2xl:text-lg font-medium hover:duration-500">
-            Blogs
+              Blogs
             </p>
           </NavLink>
         </div>

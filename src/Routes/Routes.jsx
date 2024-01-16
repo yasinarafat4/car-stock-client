@@ -1,41 +1,41 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import Home from "../pages/Home/Home/Home";
+import AddToy from "../pages/AddToy/AddToy";
 import AllToys from "../pages/AllToys/AllToys";
 import Blogs from "../pages/Blogs/Blogs";
-import Registration from "../pages/Registration/Registration";
-import Login from "../pages/Login/Login";
-import AddToy from "../pages/AddToy/AddToy";
-import MyToys from "../pages/MyToys/MyToys";
 import CategoryDetails from "../pages/CategoryDetails/CategoryDetails";
-import PrivateRoute from "./PrivateRoute";
-import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Home from "../pages/Home/Home/Home";
+import Login from "../pages/Login/Login";
+import MyToys from "../pages/MyToys/MyToys";
+import Registration from "../pages/Registration/Registration";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/alltoys",
-        element: <AllToys></AllToys>,
+        element: <AllToys />,
         loader: () => fetch("https://car-stock-server.vercel.app/totalToys"),
       },
       {
         path: "/blogs",
-        element: <Blogs></Blogs>,
+        element: <Blogs />,
       },
       {
         path: "/addtoys",
         element: (
           <PrivateRoute>
-            <AddToy></AddToy>
+            <AddToy />
           </PrivateRoute>
         ),
       },
@@ -43,23 +43,23 @@ const router = createBrowserRouter([
         path: "/mytoys",
         element: (
           <PrivateRoute>
-            <MyToys></MyToys>
+            <MyToys />
           </PrivateRoute>
         ),
       },
       {
         path: "/login",
-        element: <Login></Login>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Registration></Registration>,
+        element: <Registration />,
       },
       {
         path: "/categoryDetails/:id",
         element: (
           <PrivateRoute>
-            <CategoryDetails></CategoryDetails>
+            <CategoryDetails />
           </PrivateRoute>
         ),
         loader: ({ params }) =>
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         path: "/toyDetails/:id",
         element: (
           <PrivateRoute>
-            <ToyDetails></ToyDetails>
+            <ToyDetails />
           </PrivateRoute>
         ),
         loader: ({ params }) =>

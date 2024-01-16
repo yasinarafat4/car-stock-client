@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import TabularMyToy from "../TabularMyToy/TabularMyToy";
 import Swal from "sweetalert2";
 import useSetTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../providers/AuthProvider";
+import TabularMyToy from "../TabularMyToy/TabularMyToy";
 
 const MyToys = () => {
   useSetTitle("My Toys");
@@ -58,7 +58,7 @@ const MyToys = () => {
         My Toys
       </h2>
 
-      <div className="overflow-x-auto w-full">
+      <div className="overflow-x-auto w-full z-10">
         <table className="table w-full">
           {/* head */}
           <thead className="text-center">

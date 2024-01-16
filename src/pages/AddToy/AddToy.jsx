@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form";
 import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useSetTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddToy = () => {
   useSetTitle("Add Toy");
@@ -15,7 +15,7 @@ const AddToy = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     fetch("https://car-stock-server.vercel.app/addToys", {
       method: "POST",
       headers: {
@@ -31,6 +31,7 @@ const AddToy = () => {
           "Your favorite toy is added successfully",
           "success"
         );
+        e.target.reset();
       })
       .catch((error) => {
         console.log(error);
