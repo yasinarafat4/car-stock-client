@@ -47,10 +47,10 @@ const AllToys = () => {
   return (
     <div>
       <div className="md:flex justify-between">
-        <h2 className="text-center text-2xl md:text-4xl font-bold my-10 text-[#2E5879]">
+        <h2 className="text-start ms-4 text-2xl md:text-4xl font-bold my-10 text-[#2E5879] dark:text-slate-300">
           All Toys
         </h2>
-        <div className="flex justify-center items-center mb-5 md:0">
+        <div className="me-4 flex justify-center items-center mb-5 md:0 dark:text-slate-800">
           <input
             onChange={(e) => setSearchText(e.target.value)}
             type="text"
@@ -72,14 +72,14 @@ const AllToys = () => {
           {/* head */}
           <thead className="text-center">
             <tr>
-              <th>#</th>
-              <th>Image</th>
-              <th>Seller Name</th>
-              <th>Toy Name</th>
-              <th>Sub-category</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>View Details</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">#</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Image</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Seller Name</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Toy Name</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Sub-category</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Price</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">Available Quantity</th>
+              <th className="dark:bg-slate-900 dark:text-slate-300">View Details</th>
             </tr>
           </thead>
           <tbody>

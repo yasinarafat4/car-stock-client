@@ -62,7 +62,7 @@ const MyToys = () => {
         <table className="table w-full">
           {/* head */}
           <thead className="text-center">
-            <tr className="dark:bg-slate-900 dark:text-slate-300">
+            <tr>
               <th className="dark:bg-slate-900 dark:text-slate-300">#</th>
               <th className="dark:bg-slate-900 dark:text-slate-300">Image</th>
               <th className="dark:bg-slate-900 dark:text-slate-300">Seller Name</th>

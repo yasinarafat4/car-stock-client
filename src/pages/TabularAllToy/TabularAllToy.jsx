@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { AiOutlineEye } from "react-icons/ai";
-import { AuthContext } from "../../providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useContext, useEffect } from "react";
+import { AiOutlineEye } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const TabularAllToy = ({ toy, index }) => {
   const { user } = useContext(AuthContext);
@@ -46,24 +45,24 @@ const TabularAllToy = ({ toy, index }) => {
     <>
       {/* row */}
       <tr className="text-center" data-aos="fade-up">
-        <td>{index + 1}</td>
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{index + 1}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           <div className="avatar">
             <div className="mask mask-squircle w-24 h-24">
               <img src={pictureUrl} alt="Avatar Tailwind CSS Component" />
             </div>
           </div>
         </td>
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           {sellerName}
           <br />
           <span className="badge badge-ghost badge-sm">{sellerEmail}</span>
         </td>
-        <td>{name}</td>
-        <td>{subCategory}</td>
-        <td>${price}</td>
-        <td>{quantity}</td>
-        <td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{name}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{subCategory}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">${price}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">{quantity}</td>
+        <td className="dark:bg-slate-900 dark:text-slate-300">
           <AiOutlineEye
             title="Details"
             onClick={handleViewDetails}
