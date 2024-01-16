@@ -1,5 +1,4 @@
 // import { Link, NavLink, useNavigate } from "react-router-dom";
-// import logo from "../../../assets/logo.png";
 // import "./NavigationBar.css";
 // import { FaPowerOff, FaSignInAlt } from "react-icons/fa";
 // import { useContext } from "react";
@@ -130,6 +129,7 @@
 
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 
@@ -175,18 +175,17 @@ const NavigationBar = () => {
         >
           <div className="flex justify-center items-center">
             <img
-              className="w-12 md:w-16"
-              src="https://i.ibb.co/bdL08Xv/footer-img.png"
+              className="w-24 md:w-28"
+              src={logo}
               alt=""
             />
-            <p>SphereSkill</p>
           </div>
         </Link>
       </div>
       <div
         className={`absolute ${
           navToggle ? "left-0" : "left-[-120%]"
-        } top-[4rem] flex w-full flex-col bg-slate-200 pb-3 pt-2 transition-all duration-300 dark:bg-slate-900 lg:static lg:w-[unset] lg:flex-row lg:bg-transparent lg:pb-0 lg:pt-0 dark:lg:bg-transparent`}
+        } top-[4.5rem] md:top-[5rem] flex w-full flex-col bg-slate-200 pb-3 pt-2 transition-all duration-300 dark:bg-slate-900 lg:static lg:w-[unset] lg:flex-row lg:bg-transparent lg:pb-0 lg:pt-0 dark:lg:bg-transparent`}
       >
         <div className="menu menu-horizontal flex-col space-y-3 lg:space-y-0 px-1 lg:flex-row lg:gap-4 xl:gap-6">
           <NavLink
@@ -315,8 +314,8 @@ const NavigationBar = () => {
         <svg
           className="swap-off fill-current"
           xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
+          width="25"
+          height="25"
           viewBox="0 0 512 512"
         >
           <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
@@ -324,8 +323,8 @@ const NavigationBar = () => {
         <svg
           className="swap-on fill-current"
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
+          width="25"
+          height="25"
           viewBox="0 0 512 512"
         >
           <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
