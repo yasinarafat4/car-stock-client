@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import TabularAllToy from "../TabularAllToy/TabularAllToy";
 import { FiSearch } from "react-icons/fi";
 import { useLoaderData } from "react-router-dom";
 import useSetTitle from "../../hooks/useTitle";
+import TabularAllToy from "../TabularAllToy/TabularAllToy";
 
 const AllToys = () => {
   useSetTitle("All Toys");
@@ -83,9 +83,9 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToys.map((toy, index) => (
+            {allToys?.map((toy, index) => (
               <TabularAllToy
-                key={toy._id}
+                key={toy?._id}
                 toy={toy}
                 index={index}
               ></TabularAllToy>
@@ -95,7 +95,7 @@ const AllToys = () => {
       </div>
       {/* Pagination Button */}
       <div className="btn-group flex justify-center my-4">
-        {pageNumbers.map((number) => (
+        {pageNumbers?.map((number) => (
           <button
             className={
               currentPage === number ? "btn btn-sm btn-active" : "btn btn-sm"
@@ -111,7 +111,7 @@ const AllToys = () => {
           value={toysPerPage}
           onChange={handleSelectChange}
         >
-          {options.map((option) => (
+          {options?.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
