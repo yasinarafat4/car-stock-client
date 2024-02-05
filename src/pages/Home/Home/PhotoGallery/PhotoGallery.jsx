@@ -87,7 +87,7 @@ const PhotoGallery = () => {
 
             <button
               onClick={closeImage}
-              className="absolute -top-3 -right-3 btn btn-circle btn-sm  bg-black"
+              className="absolute top-2 right-2 md:top-3 md:right-3 btn btn-circle btn-sm  bg-black"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
